@@ -34,7 +34,16 @@ const userSchema = new mongoose_1.Schema({
         enum: ['user', 'admin'],
         default: 'user',
     },
-}, { timestamps: true });
+}, {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+});
+userSchema.virtual('donations', {
+    ref: 'Donation',
+    localField: '_id',
+    foreignField: 'user',
+});
 userSchema.pre('save', function (next) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!this.isModified('password')) {

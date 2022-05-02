@@ -16,9 +16,8 @@ class UserService {
             const user = await this.user.create({ name, email, password });
             const accessToken = await token.createToken(user);
             return accessToken;
-        } catch (error) {
-            console.log(error)
-            throw new Error('Unable to create user');
+        } catch (error:any) {
+            throw new Error(error);
         }
     }
 

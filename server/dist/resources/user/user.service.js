@@ -29,8 +29,7 @@ class UserService {
                 return accessToken;
             }
             catch (error) {
-                console.log(error);
-                throw new Error('Unable to create user');
+                throw new Error(error);
             }
         });
     }

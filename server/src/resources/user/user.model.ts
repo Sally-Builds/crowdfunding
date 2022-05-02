@@ -24,8 +24,18 @@ const userSchema = new Schema<User>(
             default: 'user',
         },
     },
-    { timestamps: true }
+    {
+        timestamps: true,
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true },
+    }
 );
+
+userSchema.virtual('donations', {
+    ref: 'Donation',
+    localField: '_id',
+    foreignField: 'user',
+});
 
 userSchema.pre<User>('save', async function (next) {
     if (!this.isModified('password')) {

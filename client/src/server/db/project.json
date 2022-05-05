@@ -1,0 +1,29 @@
+{
+    "projects": [
+        {
+            "name": "Project 1",
+            "daysLeft": 10,
+            "img": "./img/toilet.jpeg"
+        },
+        {
+            "name": "Project 2",
+            "daysLeft": 10,
+            "img": "./img/computer.jpg"
+        },
+        {
+            "name": "Project 3",
+            "daysLeft": 10,
+            "img": "./img/lab.jpeg"
+        },
+        {
+            "name": "Project 4",
+            "daysLeft": 10,
+            "img": "./img/basketball.jpeg"
+        },
+        {
+            "name": "Project 5",
+            "daysLeft": 10,
+            "img": "./img/computer.jpg"
+        }
+    ]
+}

@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 const Home = ({ projects }) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="grid">
         <main className="m-12">
           <header className="border-b-2">

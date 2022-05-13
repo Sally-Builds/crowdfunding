@@ -10,7 +10,7 @@ import DonationController from '@/resources/donation/donation.controller'
 validateEnv();
 
 const app = new App(
-    [new PostController(), new UserController(), new ProjectController(), new DonationController()],
+    [new PostController(), new UserController(), new DonationController(), new ProjectController()],
     Number(process.env.PORT)
 );
 

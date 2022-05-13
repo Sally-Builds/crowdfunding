@@ -19,11 +19,13 @@ const project_validation_1 = __importDefault(require("@/resources/project/projec
 const http_execption_1 = __importDefault(require("@/utils/exceptions/http.execption"));
 const project_service_1 = __importDefault(require("@/resources/project/project.service"));
 const authenticated_middleware_1 = __importDefault(require("@/middleware/authenticated.middleware"));
+const donation_controller_1 = __importDefault(require("@/resources/donation/donation.controller"));
 class ProjectController {
     constructor() {
         this.ProjectService = new project_service_1.default();
         this.router = (0, express_1.Router)();
         this.path = '/projects';
+        this.DonationController = new donation_controller_1.default().router;
         this.createProject = (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const { name, expectedAmount } = req.body;
@@ -80,6 +82,7 @@ class ProjectController {
         this.initializeRouter();
     }
     initializeRouter() {
+        this.router.use(`${this.path}/:projectId/donations`, this.DonationController);
         this.router
             .route(`${this.path}`)
             .post(authenticated_middleware_1.default, (0, role_middleware_1.default)('admin'), (0, validation_middleware_1.default)(project_validation_1.default.create), this.createProject)

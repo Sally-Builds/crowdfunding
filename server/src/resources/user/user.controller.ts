@@ -32,10 +32,11 @@ class UserController implements Controller {
     ): Promise<Response | void> => {
         try {
             const { email, password, name } = req.body;
-            const token = await this.userService.register( name, email, password);
+            const {accessToken, user} = await this.userService.register( name, email, password);
             res.status(201).json({
                 status: 'success',
-                token,
+                token: accessToken,
+                user,
             })
         } catch (error: any) {
             next(new HttpException(error.message, 400));

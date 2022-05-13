@@ -7,7 +7,7 @@ function validateEnv() {
             choices: ['development', 'production']
         }),
         DATABASE: (0, envalid_1.str)(),
-        PORT: (0, envalid_1.port)({ default: 3000 }),
+        PORT: (0, envalid_1.port)({ default: 4000 }),
         JWT_SECRET: (0, envalid_1.str)()
     });
 }

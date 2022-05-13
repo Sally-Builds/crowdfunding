@@ -26,7 +26,7 @@ class UserService {
             try {
                 const user = yield this.user.create({ name, email, password });
                 const accessToken = yield token_1.default.createToken(user);
-                return accessToken;
+                return { accessToken, user };
             }
             catch (error) {
                 throw new Error(error);

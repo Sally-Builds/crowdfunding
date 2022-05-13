@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header/index";
 import { Outlet } from "react-router-dom";
 
 const mainLayout = ({ children }) => {
@@ -7,7 +7,6 @@ const mainLayout = ({ children }) => {
     <div className="grid">
       <Header />
       <main>
-        {/* {children} */}
         <Outlet />
       </main>
     </div>

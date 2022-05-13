@@ -7,6 +7,6 @@ const joi_1 = __importDefault(require("joi"));
 const create = joi_1.default.object({
     amount: joi_1.default.number().required(),
     // user: Joi.string().required(),
-    project: joi_1.default.string().required()
+    // project: Joi.string().required()
 });
 exports.default = { create };

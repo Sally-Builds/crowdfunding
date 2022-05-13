@@ -11,11 +11,11 @@ class UserService {
         name: string,
         email: string,
         password: string
-    ): Promise<string | Error> {
+    ): Promise<any | Error> {
         try {
             const user = await this.user.create({ name, email, password });
             const accessToken = await token.createToken(user);
-            return accessToken;
+            return {accessToken, user};
         } catch (error:any) {
             throw new Error(error);
         }

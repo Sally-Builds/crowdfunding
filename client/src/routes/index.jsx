@@ -5,14 +5,16 @@ import { useState, useEffect } from "react";
 /**
  * import Layouts
  */
-import MainLayout from "../Layouts/mainLayout";
+import MainLayout from "../containers/Layouts/MainLayout";
+import UserLayout from "../containers/Layouts/UserLayout";
 
 /**
  * import views
  */
-import Home from "../containers/Home";
-import Login from "../containers/Login";
-import Register from "../containers/Register";
+import Home from "../containers/Views/Home";
+import Login from "../containers/Views/Login";
+import Register from "../containers/Views/Register";
+import Dashboard from "../containers/Views/Dashboard";
 
 const Router = () => {
   const [projects, setProjects] = useState([]);
@@ -42,6 +44,9 @@ const Router = () => {
             <Route path="" element={<Home projects={projects} />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
+          </Route>
+          <Route path="/dashboard" element={<UserLayout />}>
+            <Route path="" element={<Dashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>

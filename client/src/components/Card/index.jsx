@@ -1,8 +1,5 @@
 import React from "react";
 import { ClipboardCopyIcon, ClockIcon } from "@heroicons/react/outline";
-import basketball from "../../assets/img/basketball.jpeg";
-import toilet from "../../assets/img/toilet.jpeg";
-import lab from "../../assets/img/lab.jpeg";
 
 const Card = ({ project }) => {
   return (

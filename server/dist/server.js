@@ -12,5 +12,5 @@ const user_controller_1 = __importDefault(require("@/resources/user/user.control
 const project_controller_1 = __importDefault(require("@/resources/project/project.controller"));
 const donation_controller_1 = __importDefault(require("@/resources/donation/donation.controller"));
 (0, validateEnv_1.default)();
-const app = new app_1.default([new post_controller_1.default(), new user_controller_1.default(), new project_controller_1.default(), new donation_controller_1.default()], Number(process.env.PORT));
+const app = new app_1.default([new post_controller_1.default(), new user_controller_1.default(), new donation_controller_1.default(), new project_controller_1.default()], Number(process.env.PORT));
 app.listen();

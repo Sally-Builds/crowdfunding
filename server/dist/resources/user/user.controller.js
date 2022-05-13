@@ -26,10 +26,11 @@ class UserController {
         this.register = (req, res, next) => __awaiter(this, void 0, void 0, function* () {
             try {
                 const { email, password, name } = req.body;
-                const token = yield this.userService.register(name, email, password);
+                const { accessToken, user } = yield this.userService.register(name, email, password);
                 res.status(201).json({
                     status: 'success',
-                    token,
+                    token: accessToken,
+                    user,
                 });
             }
             catch (error) {
